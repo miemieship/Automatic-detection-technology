@@ -1,2 +1,12 @@
-# Automatic-detection-technology-for-surface-defects-of-hot-rolled-strip-steel-based-on-deep-learning
-基于深度学习的热轧带钢表面缺陷自动检测技术
+# 基于深度学习的热轧带钢表面缺陷自动检测技术
+Automatic detection technology for surface defects of hot-rolled strip steel based on deep learning
+# 1
+基于Pytorch框架初步搭建了一套用于缺陷检测的CNN网络(Convolutional Neural Networks)，借助带标签数据，使用交叉验证的数据集分配方法，对网络进行训练和检测，实验表明，在训练轮次为100轮的条件下，我们的网络识别正确率可达68%；
+# 2
+为了充分利用现有数据集，提高模型的泛化性能，我们给现有数据集加上高斯噪声，对数据集进行旋转平移等操作；
+# 3
+为了减弱网络模型的过拟合现象，我们采用神经元随机失活(Dropout)方法，通过随机让部分神经元临时不参与计算的方式，减少神经元之间的依赖，迫使网络学习更加普适化的特征；
+# 4
+为了减少参数数量，提升运算速度，我们改变最初的网络，采用一种轻量化的网络(EffNet)，这种网络相比于传统轻量化网络(SqueezeNet、MobileNet等)，在参数量基本相同的情况下，识别精度更高；
+# 5
+为了增加自动检测系统的交互性能，我们借助pyqt5设计了具有统计缺陷数量和显示识别结果功能的GUI界面，并将相关代码移植到Linux操作系统下，通过树莓派运行，经检测识别正确率可达94%；
